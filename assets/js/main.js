@@ -183,3 +183,29 @@
   document.addEventListener('scroll', navmenuScrollspy);
 
 })();
+
+
+
+
+
+
+
+
+
+document.querySelectorAll('.read-more-btn').forEach(button => {
+  button.addEventListener('click', () => {
+    const content = button.previousElementSibling; // Find the content <p>
+    const moreText = content.querySelector('.more-text');
+    const dots = content.querySelector('.dots');
+
+    if (moreText.style.display === 'none' || !moreText.style.display) {
+      moreText.style.display = 'inline';
+      dots.style.display = 'none';
+      button.textContent = 'Read Less';
+    } else {
+      moreText.style.display = 'none';
+      dots.style.display = 'inline';
+      button.textContent = 'Read More';
+    }
+  });
+});
