@@ -85,7 +85,7 @@ h3,
 h4,
 h5,
 h6 {
-  color: var(--heading-color);
+  color: var(--accent-color);
   font-family: var(--heading-font);
 }
 
@@ -514,6 +514,7 @@ h6 {
   font-weight: bold;
   position: relative;
   padding-bottom: 12px;
+  color: var(--contrast-color);
 }
 
 .footer .footer-links {
@@ -764,19 +765,27 @@ section,
 
 .section-title h2 {
   font-size: 14px;
-  font-weight: 500;
-  padding: 0;
-  line-height: 1px;
-  margin: 0;
-  letter-spacing: 1.5px;
-  text-transform: uppercase;
-  color: color-mix(in srgb, var(--default-color), transparent 50%);
-  position: relative;
+    font-weight: 600;
+    padding: 0;
+    line-height: 1px;
+    margin: 0;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    position: relative;
+    color: var(--default-color);
 }
 
 .section-title h2::after {
   content: "";
-  width: 120px;
+  width: 35px;
+  height: 1px;
+  display: inline-block;
+  background: var(--accent-color);
+  margin: 4px 10px;
+}
+.section-title h2::before {
+  content: "";
+  width: 35px;
   height: 1px;
   display: inline-block;
   background: var(--accent-color);
@@ -784,7 +793,8 @@ section,
 }
 
 .section-title div {
-  color: var(--heading-color);
+  /* color: var(--heading-color); */
+  color: var(--accent-color);
   margin: 0;
   margin: 0;
   font-size: 28px;
@@ -1094,6 +1104,7 @@ section,
   margin-bottom: 10px;
   font-size: 24px;
   font-weight: 700;
+  color: var( --heading-color);
 }
 
 .about .icon-box p {
@@ -1318,6 +1329,7 @@ section,
   font-size: 20px;
   font-weight: bold;
   margin: 10px 0 5px 0;
+  color: var(--nav-color);
 }
 
 .testimonials .testimonial-item h4 {
@@ -2005,3 +2017,14 @@ section,
   font-size: 1rem;
   text-decoration: underline;
 }
+
+
+
+
+
+
+
+
+
+
+
