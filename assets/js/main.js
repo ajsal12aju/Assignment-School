@@ -209,3 +209,53 @@ document.querySelectorAll('.read-more-btn').forEach(button => {
     }
   });
 });
+
+
+
+
+// send mail function
+function sendEmail(event) {
+  event.preventDefault(); 
+
+  const loadingElement = document.querySelector('.loading');
+  const successMessageElement = document.querySelector('.sent-message');
+  const errorMessageElement = document.querySelector('.error-message');
+
+  loadingElement.style.display = 'block';
+  successMessageElement.style.display = 'none';
+  errorMessageElement.style.display = 'none';
+
+  let params = {
+    name: document.getElementById('name').value,
+    email: document.getElementById('email').value,
+    subject: document.getElementById('subject').value,
+    message: document.getElementById('message').value,
+  };
+
+  emailjs
+    .send("service_0bfw14r", "template_7kahbp1", params)
+    .then(
+      function (response) {
+        console.log('SUCCESS!', response.status, response.text);
+
+        loadingElement.style.display = 'none';
+        successMessageElement.style.display = 'block';
+
+        setTimeout(() => {
+          successMessageElement.style.display = 'none';
+        }, 3000);
+
+        document.getElementById('emailForm').reset();
+      },
+      function (error) {
+        console.log('FAILED...', error);
+
+        loadingElement.style.display = 'none';
+        errorMessageElement.style.display = 'block';
+
+        setTimeout(() => {
+          errorMessageElement.style.display = 'none';
+        }, 3000);
+      }
+    );
+}
