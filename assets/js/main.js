@@ -232,30 +232,28 @@ function sendEmail(event) {
     message: document.getElementById('message').value,
   };
 
-  emailjs
-    .send("service_0bfw14r", "template_7kahbp1", params)
-    .then(
-      function (response) {
-        console.log('SUCCESS!', response.status, response.text);
+  emailjs.send("service_3vjecj7", "template_u5r3ss4", params).then(
+    function (response) {
+      console.log("SUCCESS!", response.status, response.text);
 
-        loadingElement.style.display = 'none';
-        successMessageElement.style.display = 'block';
+      loadingElement.style.display = "none";
+      successMessageElement.style.display = "block";
 
-        setTimeout(() => {
-          successMessageElement.style.display = 'none';
-        }, 3000);
+      setTimeout(() => {
+        successMessageElement.style.display = "none";
+      }, 3000);
 
-        document.getElementById('emailForm').reset();
-      },
-      function (error) {
-        console.log('FAILED...', error);
+      document.getElementById("emailForm").reset();
+    },
+    function (error) {
+      console.log("FAILED...", error);
 
-        loadingElement.style.display = 'none';
-        errorMessageElement.style.display = 'block';
+      loadingElement.style.display = "none";
+      errorMessageElement.style.display = "block";
 
-        setTimeout(() => {
-          errorMessageElement.style.display = 'none';
-        }, 3000);
-      }
-    );
+      setTimeout(() => {
+        errorMessageElement.style.display = "none";
+      }, 3000);
+    }
+  );
 }
