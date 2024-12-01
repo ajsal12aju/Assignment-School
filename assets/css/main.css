@@ -765,9 +765,7 @@ section,
 .hero:before {
   content: "";
   /* background: color-mix(in srgb, var(--background-color), transparent 10%); */
-  /* background-color: #2563ebed; */
-  background: rgba(0, 0, 0, 0.1); /* Fallback color */
-  background: color-mix(in srgb, var(--background-color), transparent 10%);
+  background-color: #2563ebed;
   position: absolute;
   inset: 0;
   z-index: 2;
