@@ -441,7 +441,9 @@ h6 {
   font-size: 14px;
   position: relative;
 }
-
+.footer a {
+  color: var(--default-color);
+}
 .footer .footer-top {
   padding-top: 50px;
 }
@@ -1362,6 +1364,9 @@ display: block;
   padding: 0;
   margin-bottom: 0;
   font-size: 14px;
+}
+.contact a{
+ color: var(--default-color);
 }
 
 .contact .info-item:hover i {
