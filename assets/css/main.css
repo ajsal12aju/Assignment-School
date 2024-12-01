@@ -53,7 +53,7 @@ a {
 }
 
 a:hover {
-  color: color-mix(in srgb, var(--accent-color), transparent 25%);
+  /* color: color-mix(in srgb, var(--accent-color), transparent 25%); */
   text-decoration: none;
 }
 
@@ -1642,7 +1642,9 @@ display: block;
   display: grid;
   place-items: center;
 }
-
+.wtsApp_btn_bottom:hover{
+  color:#ffffff ;
+}
 
 .wtsApp_btn_bottom:before, .wtsApp_btn_bottom:after {
   content: "";
