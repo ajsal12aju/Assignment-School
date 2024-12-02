@@ -1425,7 +1425,7 @@ display: block;
 .contact .email-form input[type=email]::placeholder,
 .contact .email-form textarea::placeholder {
   /* color: color-mix(in srgb, var(--default-color), transparent 70%); */
-  color: #dedede;
+  color: #a0a0a0;
 }
 
 .contact .email-form button[type=submit] {
@@ -1441,6 +1441,7 @@ display: block;
   /* background: color-mix(in srgb, var(--accent-color), transparent 25%); */
   background: #2563ebc9;
 }
+
 /*--------------------------------------------------------------
 # work Section
 --------------------------------------------------------------*/
@@ -1574,7 +1575,7 @@ display: block;
   }
 }
 
-@media(max-width:375px) {
+@media(max-width:576px) {
   .work li .date {
     font-size: 0.9rem; 
   }
