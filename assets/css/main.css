@@ -653,6 +653,15 @@ section,
   }
 }
 
+@media(max-width:678px){
+  section,
+.section {
+  padding-bottom:30px;
+}
+.section-title {
+  padding-bottom: 40px;
+}
+}
 /*--------------------------------------------------------------
 # Global Section Titles
 --------------------------------------------------------------*/
@@ -700,6 +709,16 @@ section,
   font-family: var(--heading-font);
 }
 
+@media(max-width:375px){
+  .section-title div {
+    font-size: 26px;
+  }
+}
+@media(max-width:678px){
+.section-title {
+  padding-bottom: 40px;
+}
+}
 /*--------------------------------------------------------------
 # Hero Section
 --------------------------------------------------------------*/
@@ -707,7 +726,7 @@ section,
   width: 100%;
   min-height: 70vh;
   position: relative;
-  padding: 120px 0 120px 0;
+  padding: 100px 0 120px 0;
   display: flex;
   align-items: center;
 }
@@ -767,7 +786,7 @@ section,
 .hero .btn-get-started {
   color:  var(--accent-color);
   background:var( --default-color);
-  font-family: var(--heading-font);
+  font-family: var(--default-font);
   font-weight: 700;
   font-size: 15px;
   letter-spacing: 1px;
@@ -999,6 +1018,11 @@ display: block;
   .service .icon-boxes .col-md-6:nth-child(2) .icon-box,
   .service .icon-boxes .col-md-6:nth-child(4) .icon-box {
     margin-top: 0;
+  }
+}
+@media (max-width: 992px) {
+  .service .icon-box {
+    padding: 20px 20px;
   }
 }
 .service .more-text {
@@ -1545,6 +1569,9 @@ display: block;
   .work li .date i {
     padding-left: 2rem;
   }
+  .work li .date::after {
+    top: 40%;
+  }
 }
 
 @media(max-width:375px) {
@@ -1554,6 +1581,23 @@ display: block;
   .work li .date i {
     padding-left: 0.8rem;
   }
+  .work {
+    --col-gap: 1.5rem;
+  }
+  .work li .descr {
+    padding-block-start: 0.5rem;
+    padding-block-end: 0.5rem;
+  }
+  .work li .title, .work li .descr {
+    padding-inline: 0.9rem;
+}
+.work li .date {
+  height: 36px;
+  gap:.5rem;
+}
+.work li .date::after {
+  top: 40%;
+}
 }
 
 
