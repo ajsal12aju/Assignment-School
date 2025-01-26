@@ -53,7 +53,6 @@ a {
 }
 
 a:hover {
-  /* color: color-mix(in srgb, var(--accent-color), transparent 25%); */
   text-decoration: none;
 }
 
@@ -199,7 +198,7 @@ h6 {
 
   .navmenu a,
   .navmenu a:focus {
-    color: color-mix(in srgb, var(--nav-color), transparent 20%);
+    color: #ffffffcc;
     font-size: 15px;
     padding: 0 2px;
     font-family: var(--nav-font);
@@ -321,7 +320,7 @@ h6 {
     margin: 0;
     border-radius: 6px;
     background-color: var(--nav-mobile-background-color);
-    border: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
+    border: 1px solid var(--nav-color);
     box-shadow: none;
     overflow-y: auto;
     transition: 0.3s;
@@ -354,7 +353,6 @@ h6 {
     justify-content: center;
     border-radius: 50%;
     transition: 0.3s;
-    background-color: color-mix(in srgb, var(--accent-color), transparent 90%);
   }
 
   .navmenu a i:hover,
@@ -434,7 +432,6 @@ h6 {
   height: 65px;
 }
 }
-
 /*--------------------------------------------------------------
 # Global Footer
 --------------------------------------------------------------*/
@@ -444,10 +441,11 @@ h6 {
   font-size: 14px;
   position: relative;
 }
-
+.footer a {
+  color: var(--default-color);
+}
 .footer .footer-top {
   padding-top: 50px;
-  border-top: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
 }
 
 .footer .footer-about .logo {
@@ -480,9 +478,10 @@ h6 {
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  border: 1px solid color-mix(in srgb, var(--default-color), transparent 50%);
+  /* border: 1px solid color-mix(in srgb, var(--default-color), transparent 50%); */
   font-size: 16px;
-  color: color-mix(in srgb, var(--default-color), transparent 30%);
+  /* color: color-mix(in srgb, var(--default-color), transparent 30%); */
+  color: #ffffffc4;
   margin-right: 10px;
   transition: 0.3s;
 }
@@ -490,6 +489,7 @@ h6 {
 .footer .social-links a:hover {
   color: var( --contrast-color);
   border-color: var(--contrast-color);
+  cursor: pointer;
 }
 
 .footer h4 {
@@ -527,7 +527,8 @@ h6 {
 }
 
 .footer .footer-links ul a {
-  color: color-mix(in srgb, var(--default-color), transparent 30%);
+  /* color: color-mix(in srgb, var(--default-color), transparent 30%); */
+  color: #ffffff;
   display: inline-block;
   line-height: 1;
 }
@@ -540,52 +541,11 @@ h6 {
   margin-bottom: 5px;
 }
 
-.footer .footer-newsletter .newsletter-form {
-  margin-top: 30px;
-  margin-bottom: 15px;
-  padding: 6px 8px;
-  position: relative;
-  border-radius: 4px;
-  border: 1px solid color-mix(in srgb, var(--default-color), transparent 80%);
-  display: flex;
-  background-color: var(--background-color);
-  transition: 0.3s;
-}
-
-.footer .footer-newsletter .newsletter-form:focus-within {
-  border-color: var(--accent-color);
-}
-
-.footer .footer-newsletter .newsletter-form input[type=email] {
-  border: 0;
-  padding: 4px;
-  width: 100%;
-  background-color: var(--background-color);
-  color: var(--default-color);
-}
-
-.footer .footer-newsletter .newsletter-form input[type=email]:focus-visible {
-  outline: none;
-}
-
-.footer .footer-newsletter .newsletter-form input[type=submit] {
-  border: 0;
-  font-size: 16px;
-  padding: 0 20px;
-  margin: -7px -8px -7px 0;
-  background: var(--accent-color);
-  color: var(--contrast-color);
-  transition: 0.3s;
-  border-radius: 0 4px 4px 0;
-}
-
-.footer .footer-newsletter .newsletter-form input[type=submit]:hover {
-  background: color-mix(in srgb, var(--accent-color), transparent 20%);
-}
 
 .footer .copyright {
   padding: 25px 0;
-  border-top: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
+  border-top: 1px solid #ffffff54;
+  /* border-top: 1px solid color-mix(in srgb, var(--default-color), transparent 90%); */
 }
 
 .footer .copyright p {
@@ -635,7 +595,7 @@ h6 {
 /*--------------------------------------------------------------
 # Scroll Top Button
 --------------------------------------------------------------*/
-.scroll-top {
+/* .scroll-top {
   position: fixed;
   visibility: hidden;
   opacity: 0;
@@ -663,7 +623,7 @@ h6 {
 .scroll-top.active {
   visibility: visible;
   opacity: 1;
-}
+} */
 
 /*--------------------------------------------------------------
 # Disable aos animation delay on mobile devices
@@ -693,6 +653,15 @@ section,
   }
 }
 
+@media(max-width:678px){
+  section,
+.section {
+  padding-bottom:30px;
+}
+.section-title {
+  padding-bottom: 40px;
+}
+}
 /*--------------------------------------------------------------
 # Global Section Titles
 --------------------------------------------------------------*/
@@ -740,6 +709,16 @@ section,
   font-family: var(--heading-font);
 }
 
+@media(max-width:375px){
+  .section-title div {
+    font-size: 26px;
+  }
+}
+@media(max-width:678px){
+.section-title {
+  padding-bottom: 40px;
+}
+}
 /*--------------------------------------------------------------
 # Hero Section
 --------------------------------------------------------------*/
@@ -747,7 +726,7 @@ section,
   width: 100%;
   min-height: 70vh;
   position: relative;
-  padding: 120px 0 120px 0;
+  padding: 100px 0 120px 0;
   display: flex;
   align-items: center;
 }
@@ -764,7 +743,9 @@ section,
 
 .hero:before {
   content: "";
-  background: color-mix(in srgb, var(--background-color), transparent 10%);
+  /* background: color-mix(in srgb, var(--background-color), transparent 10%); */
+  background-color: var(--background-color);
+  opacity: .9;
   position: absolute;
   inset: 0;
   z-index: 2;
@@ -780,7 +761,8 @@ section,
   font-size: 48px;
   font-weight: 700;
   line-height: 56px;
-  color: color-mix(in srgb, var(--heading-color), transparent 30%);
+  /* color: color-mix(in srgb, var(--heading-color), transparent 30%); */
+  color: #ffffffcc;
 }
 
 .hero h1 span {
@@ -789,7 +771,7 @@ section,
 }
 
 .hero p {
-  color: color-mix(in srgb, var(--default-color), transparent 30%);
+  color: #ffffffcc;
   margin: 5px 0 30px 0;
   font-size: 22px;
   font-weight: 400;
@@ -804,7 +786,7 @@ section,
 .hero .btn-get-started {
   color:  var(--accent-color);
   background:var( --default-color);
-  font-family: var(--heading-font);
+  font-family: var(--default-font);
   font-weight: 700;
   font-size: 15px;
   letter-spacing: 1px;
@@ -820,15 +802,15 @@ section,
   box-shadow: 0 8px 28px rgba(0, 0, 0, 0.1);
 }
 
-.hero .btn-watch-video {
+/* .hero .btn-watch-video {
   font-size: 16px;
   transition: 0.5s;
   margin-left: 25px;
   color: var(--default-color);
   font-weight: 600;
-}
+} */
 
-.hero .btn-watch-video i {
+/* .hero .btn-watch-video i {
   color: var(--accent-color);
   font-size: 32px;
   transition: 0.3s;
@@ -838,11 +820,8 @@ section,
 
 .hero .btn-watch-video:hover {
   color: var(--accent-color);
-}
+} */
 
-.hero .btn-watch-video:hover i {
-  color: color-mix(in srgb, var(--accent-color), transparent 15%);
-}
 
 .hero .animated {
   animation: up-down 2s ease-in-out infinite alternate-reverse both;
@@ -991,7 +970,8 @@ section,
   font-size: 32px;
   line-height: 0;
   transition: all 0.4s ease-out 0s;
-  background-color: color-mix(in srgb, var(--accent-color), transparent 95%);
+  background-color: #f4f7fe;
+  /* background-color: color-mix(in srgb, var(--accent-color), transparent 95%); */
   color: var(--accent-color);
 }
 
@@ -1040,6 +1020,11 @@ display: block;
     margin-top: 0;
   }
 }
+@media (max-width: 992px) {
+  .service .icon-box {
+    padding: 20px 20px;
+  }
+}
 .service .more-text {
   display: none;
 }
@@ -1062,7 +1047,8 @@ display: block;
   align-items: center;
   padding: 20px;
   transition: 0.3s;
-  border: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
+  /* border: 1px solid color-mix(in srgb, var(--default-color), transparent 90%); */
+  border: 1px solid rgb(241, 241, 241);
   position: relative;
 }
 
@@ -1097,7 +1083,8 @@ display: block;
 # why-choose Section
 --------------------------------------------------------------*/
 .why-choose .features-item {
-  color: color-mix(in srgb, var(--default-color), transparent 20%);
+  /* color:red; */
+  /* color: color-mix(in srgb, var(--default-color), transparent 20%); */
 }
 
 .why-choose .features-item+.features-item {
@@ -1150,7 +1137,8 @@ display: block;
 
 .testimonials:before {
   content: "";
-  background: color-mix(in srgb, var(--background-color), transparent 30%);
+  /* background: color-mix(in srgb, var(--background-color), transparent 30%); */
+  background: #2563ebd9;
   position: absolute;
   inset: 0;
   z-index: 2;
@@ -1183,7 +1171,8 @@ display: block;
 .testimonials .testimonial-item .testimonial-img {
   width: 100px;
   border-radius: 50%;
-  border: 6px solid color-mix(in srgb, var(--default-color), transparent 85%);
+  /* border: 6px solid color-mix(in srgb, var(--default-color), transparent 85%); */
+  border: 6px solid #ffffff47;
   margin: 0 auto;
 }
 
@@ -1197,7 +1186,8 @@ display: block;
 .testimonials .testimonial-item h4 {
   font-size: 14px;
   margin: 0 0 15px 0;
-  color: color-mix(in srgb, var(--default-color), transparent 40%);
+  /* color: color-mix(in srgb, var(--default-color), transparent 40%); */
+  color: rgb(216, 216, 216);
 }
 
 .testimonials .testimonial-item .stars {
@@ -1211,7 +1201,8 @@ display: block;
 
 .testimonials .testimonial-item .quote-icon-left,
 .testimonials .testimonial-item .quote-icon-right {
-  color: color-mix(in srgb, var(--default-color), transparent 40%);
+  color: #ffffffcc;
+  /* color: color-mix(in srgb, var(--default-color), transparent 40%); */
   font-size: 26px;
   line-height: 0;
 }
@@ -1247,7 +1238,8 @@ display: block;
 .testimonials .swiper-pagination .swiper-pagination-bullet {
   width: 12px;
   height: 12px;
-  background-color: color-mix(in srgb, var(--default-color), transparent 50%);
+  background-color: #ffffffcc;
+  /* background-color: color-mix(in srgb, var(--default-color), transparent 50%); */
   opacity: 0.5;
 }
 
@@ -1271,7 +1263,8 @@ display: block;
 }
 
 .faq .content p {
-  color: color-mix(in srgb, var(--default-color), transparent 30%);
+  /* color: color-mix(in srgb, var(--default-color), transparent 30%); */
+  color: #5a5a5aad;
 }
 
 .faq .faq-container {
@@ -1371,7 +1364,8 @@ display: block;
 
 .contact .info-item i {
   color: var(--accent-color);
-  background: color-mix(in srgb, var(--accent-color), transparent 92%);
+  /* background: color-mix(in srgb, var(--accent-color), transparent 92%); */
+  background: #eef3fe;
   font-size: 20px;
   width: 44px;
   height: 44px;
@@ -1395,6 +1389,9 @@ display: block;
   margin-bottom: 0;
   font-size: 14px;
 }
+.contact a{
+ color: var(--default-color);
+}
 
 .contact .info-item:hover i {
   background: var(--accent-color);
@@ -1413,8 +1410,9 @@ display: block;
   box-shadow: none;
   border-radius: 0;
   color: var(--default-color);
-  background-color: color-mix(in srgb, var(--background-color), transparent 50%);
-  border-color: color-mix(in srgb, var(--default-color), transparent 80%);
+  /* background-color: color-mix(in srgb, var(--background-color), transparent 50%); */
+  background-color: #ffffff;
+  border-color: #dedede;
 }
 
 .contact .email-form input[type=text]:focus,
@@ -1426,7 +1424,8 @@ display: block;
 .contact .email-form input[type=text]::placeholder,
 .contact .email-form input[type=email]::placeholder,
 .contact .email-form textarea::placeholder {
-  color: color-mix(in srgb, var(--default-color), transparent 70%);
+  /* color: color-mix(in srgb, var(--default-color), transparent 70%); */
+  color: #a0a0a0;
 }
 
 .contact .email-form button[type=submit] {
@@ -1439,8 +1438,10 @@ display: block;
 }
 
 .contact .email-form button[type=submit]:hover {
-  background: color-mix(in srgb, var(--accent-color), transparent 25%);
+  /* background: color-mix(in srgb, var(--accent-color), transparent 25%); */
+  background: #2563ebc9;
 }
+
 /*--------------------------------------------------------------
 # work Section
 --------------------------------------------------------------*/
@@ -1569,15 +1570,35 @@ display: block;
   .work li .date i {
     padding-left: 2rem;
   }
+  .work li .date::after {
+    top: 40%;
+  }
 }
 
-@media(max-width:375px) {
+@media(max-width:576px) {
   .work li .date {
     font-size: 0.9rem; 
   }
   .work li .date i {
     padding-left: 0.8rem;
   }
+  .work {
+    --col-gap: 1.5rem;
+  }
+  .work li .descr {
+    padding-block-start: 0.5rem;
+    padding-block-end: 0.5rem;
+  }
+  .work li .title, .work li .descr {
+    padding-inline: 0.9rem;
+}
+.work li .date {
+  height: 36px;
+  gap:.5rem;
+}
+.work li .date::after {
+  top: 40%;
+}
 }
 
 
